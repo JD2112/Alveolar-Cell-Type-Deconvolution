@@ -65,3 +65,24 @@ font = 1, label.offset = 2,
 no.margin = TRUE)
 tiplabels(pch = 19, col = colors, adj = 0.5, cex = 2)
 dev.off()
+
+# Hierarchical clustering from alveolar lymphocytes data
+cd3 <- myNorm
+colors = c("B1_SPU_HLDADR" = "#FF8C00", "B1_LAV_HLDADR" = "#68228B", "B2_SPU_HLDADR" = "#FF8C00", "B2_LAV_HLDADR" = "#68228B", "B3_SPU_HLDADR" = "#FF8C00", "B3_LAV_HLDADR" = "#68228B", "B4_SPU_HLDADR" = "#FF8C00", "B4_LAV_HLDADR" = "#68228B", "B5_SPU_HLDADR" = "#FF8C00", "B5_LAV_HLDADR" = "#68228B")
+library(cluster)
+library(ape)
+dist.cd3 <- dist(cd3)
+distCD3 <- t(cd3)
+dist.CD3 <- dist(distCD3)
+hc_cd3 <- hclust(dist.CD3)
+plot(as.phylo(hc_cd3), 
+font = 1, label.offset = 2,
+no.margin = TRUE)
+tiplabels(pch = 19, col = colors, adj = 0.5, cex = 2)
+setEPS()
+postscript("hclust_Per_CD3.eps")
+plot(as.phylo(hc_cd3), 
+font = 1, label.offset = 2,
+no.margin = TRUE)
+tiplabels(pch = 19, col = colors, adj = 0.5, cex = 2)
+dev.off()
