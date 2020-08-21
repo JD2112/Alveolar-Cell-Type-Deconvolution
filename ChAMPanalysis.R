@@ -20,3 +20,48 @@ wilcox.test(combine ~ gr, data = combine)
 wilcox.test(data$B1_SPU_HLDADR, data$B1_LAV_HLDADR, paired = TRUE)
 
 wilcox.test(combine ~ gr, data = combine)
+
+
+# Cluster analysis
+hladr <- myNorm
+head(hladr)
+HLADR <- t(hladr)
+dist.hladr <- dist(HLADR)
+library(cluster)
+library(ape)
+hc.hladr <- hclust(dist.hladr)
+plot(as.phylo(hc.hladr), 
+font = 1, label.offset = 20,
+no.margin = TRUE)
+plot(as.phylo(hc_cd3), 
+font = 1, label.offset = 1,
+no.margin = TRUE)
+head(myNorm, n = 1)
+colors = c("B1_SPU_HLDADR" = "#FF8C00", "B1_LAV_HLDADR" = "8B0000", "B2_SPU_HLDADR" = "#FF8C00", "B2_LAV_HLDADR" = "8B0000", "B3_SPU_HLDADR" = "#FF8C00", "B3_LAV_HLDADR" = "8B0000", "B4_SPU_HLDADR" = "#FF8C00", "B4_LAV_HLDADR" = "8B0000", "B5_SPU_HLDADR" = "#FF8C00", "B5_LAV_HLDADR" = "8B0000")
+plot(as.phylo(hc.hladr), 
+font = 1, label.offset = 1,
+no.margin = TRUE)
+tiplabels(pch = 19, col = colors, adj = 1, cex = 2)
+colors = c("B1_SPU_HLDADR" = "#FF8C00", "B1_LAV_HLDADR" = "#68228B", "B2_SPU_HLDADR" = "#FF8C00", "B2_LAV_HLDADR" = "#68228B", "B3_SPU_HLDADR" = "#FF8C00", "B3_LAV_HLDADR" = "#68228B", "B4_SPU_HLDADR" = "#FF8C00", "B4_LAV_HLDADR" = "#68228B", "B5_SPU_HLDADR" = "#FF8C00", "B5_LAV_HLDADR" = "#68228B")
+plot(as.phylo(hc1.hladr), 
+font = 1, label.offset = 20,
+no.margin = TRUE)
+plot(as.phylo(hc.hladr), 
+font = 1, label.offset = 1,
+no.margin = TRUE)
+tiplabels(pch = 19, col = colors, adj = 1, cex = 2)
+plot(as.phylo(hc.hladr), 
+font = 1, label.offset = 1,
+no.margin = TRUE)
+tiplabels(pch = 19, col = colors, adj = 2, cex = 2)
+plot(as.phylo(hc.hladr), 
+font = 1, label.offset = 2,
+no.margin = TRUE)
+tiplabels(pch = 19, col = colors, adj = 0.5, cex = 2)
+setEPS()
+postscript("hclust_Per_HLADR.eps")
+plot(as.phylo(hc.hladr), 
+font = 1, label.offset = 2,
+no.margin = TRUE)
+tiplabels(pch = 19, col = colors, adj = 0.5, cex = 2)
+dev.off()
