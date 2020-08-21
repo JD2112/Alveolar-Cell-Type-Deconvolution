@@ -52,3 +52,104 @@ ll =0.04)
 legend("topright", fill = c("#FDD4D4", "#99E5E0"),
     legend = c("SI", "BAL"))
 dev.off()
+
+
+# Violin Plot
+library(tidyverse)
+library(viridis)
+combine %>%
+  ggplot( aes(x=gr, y=combine, fill=gr)) +
+    geom_violin() +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+    theme_ipsum() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=11)
+    ) +
+    ggtitle("Violin chart") +
+    xlab("")
+
+data1 <- data %>% 
+  gather(key="text", value="value") %>%
+  mutate(text = gsub("\\.", " ",text)) %>%
+  mutate(value = round(as.numeric(value),0)) %>%
+  filter(text %in% c("B1_SPU","B1_LAV","B2_SPU","B2_LAV","B3_SPU", "B3_LAV", "B4_SPU", "B4_LAV", "B5_SPU","B5_LAV"))
+
+# Plot
+p <- data1 %>%
+  mutate(text = fct_reorder(text, value)) %>% # Reorder data
+  ggplot( aes(x=text, y=value, fill=text, color=text)) +
+    geom_violin(width=2.1, size=0.2) +
+    scale_fill_viridis(discrete=TRUE) +
+    scale_color_viridis(discrete=TRUE) +
+    theme_ipsum() +
+    theme(
+      legend.position="none"
+    ) +
+    coord_flip() + # This switch X and Y axis and allows to get the horizontal version
+    xlab("") +
+    ylab("")
+
+p
+
+# Bean plot
+beanplot(data1,side='both', 
+     border='NA', log = "", wd = 0.11,
+     col = list("red", c("blue", "violet")) ,
+     ylab='methylation value',
+     names = c("B1", "B2", "B3","B4","B5"),	
+what = c(1,1,1,0),
+ll =0.04)
+legend("topright", fill = c("red", "blue"),
+    legend = c("IS", "BAL"))
+
+#Density plot
+
+library(ggplot2)
+library(hrbrthemes)
+library(dplyr)
+library(tidyr)
+library(viridis)
+B1_density <- ggplot(data=combine, aes(x=combine, group=gr, fill=gr)) +
+    geom_density(adjust=1.5, alpha=.4) +
+    theme_ipsum()
+png("B1_DensityPlot_CD3.png", height = 15, width = 10, units = "in", res = 300)
+B1_density
+dev.off()
+
+B2_density <- ggplot(data=combineB2, aes(x=combine, group=gr, fill=gr)) +
+    geom_density(adjust=1.5, alpha=.4) +
+    theme_ipsum()
+png("B2_DensityPlot_CD3.png", height = 15, width = 10, units = "in", res = 300)
+B2_density
+dev.off()
+
+B3_density <- ggplot(data=combineB3, aes(x=combine, group=gr, fill=gr)) +
+    geom_density(adjust=1.5, alpha=.4) +
+    theme_ipsum()
+png("B3_DensityPlot_CD3.png", height = 15, width = 10, units = "in", res = 300)
+B3_density
+dev.off()
+
+B4_density <- ggplot(data=combineB4, aes(x=combine, group=gr, fill=gr)) +
+    geom_density(adjust=1.5, alpha=.4) +
+    theme_ipsum()
+png("B4_DensityPlot_CD3.png", height = 15, width = 10, units = "in", res = 300)
+B4_density
+dev.off()
+
+B5_density <- ggplot(data=combineB5, aes(x=combine, group=gr, fill=gr)) +
+    geom_density(adjust=1.5, alpha=.4) +
+    theme_ipsum()
+png("B5_DensityPlot_CD3.png", height = 15, width = 10, units = "in", res = 300)
+B5_density
+dev.off()
+
+library(ggpubr)
+figure <- ggarrange(B1_density, B2_density, B3_density,B4_density,B5_density,
+                    labels = c("B1", "B2", "B3","B4","B5"),
+                    ncol = 2, nrow = 3)
+#figure
+png("DensityPlot_CD3.png", height = 15, width = 10, units = "in", res = 300)
+figure
+dev.off()
