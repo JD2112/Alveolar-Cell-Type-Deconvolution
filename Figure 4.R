@@ -167,7 +167,7 @@ abline(h=0.9, col = "red", lty = 3)
 #abline(v=10.5, col = "red", lty = 3)
 
 HLADR <- grepl("_HLADR", colnames(data))
-colo2 <- ifelse(HLADR, "blue", "black")
+colo2 <- ifelse(HLADR, "#F97806", "#0BF488")
 par(mar = c(6.1, 4.1, 4.1, 4.1), # change the margins
     lwd = 2, # increase the line thickness
     cex.axis = 1.2 # increase default axis label size
@@ -178,7 +178,6 @@ text(x = 1:length(data),
      labels = colnames(data),
      col = colo2,
      family = "Times New Roman",
-     font.size = 12,
      xpd = TRUE,
      adj = c(0.6, -3.5),
      offset = 1,
