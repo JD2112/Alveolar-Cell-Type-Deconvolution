@@ -70,3 +70,52 @@ flattenCorrMatrix(res2$r, res2$P)
 
 library(corrplot)
 corrplot.mixed(res2$r, color="gray", fill = "gray", order="hclust",number.cex=1, tl.cex = 1, p.mat = res2$P, sig.level = 1e-16, insig = "blank")
+
+# Updated 2021-02-21
+load("~/Documents/ML/BALvsIS/BALdata_Last/Part2_ValidationWithStockholmData/DataSheets/.RData")
+setwd("~/Documents/ML/BALvsIS/BALdata_Last/Part2_ValidationWithStockholmData/DataSheets")
+head(data)
+library(corrplot)
+
+data1 <- data
+colnames(data1) <- gsub(x = colnames(data1), pattern = "B1_", replacement = "P1_")
+colnames(data1) <- gsub(x = colnames(data1), pattern = "B2_", replacement = "P2_")
+colnames(data1) <- gsub(x = colnames(data1), pattern = "B3_", replacement = "P3_")
+colnames(data1) <- gsub(x = colnames(data1), pattern = "B4_", replacement = "P4_")
+colnames(data1) <- gsub(x = colnames(data1), pattern = "B5_", replacement = "P5_")
+
+data2  <- cor(data)
+corrplot(data2, method = "number", order = "hclust", 
+         tl.col = "black", tl.srt = 45)
+
+
+library("Hmisc")
+res2 <- rcorr(as.matrix(data1))
+res2
+
+flattenCorrMatrix <- function(cormat, pmat) {
+  ut <- upper.tri(cormat)
+  data.frame(
+    row = rownames(cormat)[row(cormat)[ut]],
+    column = rownames(cormat)[col(cormat)[ut]],
+    cor  =(cormat)[ut],
+    p = pmat[ut]
+  )
+}
+
+flattenCorrMatrix(res2$r, res2$P)
+
+
+library(corrplot)
+par(family = "Times New Roman")
+corrplot(res2$r, color="gray", 
+               fill = "gray",
+               method = "number",
+               order="hclust",
+               number.cex=1, 
+               tl.cex = 1, 
+               p.mat = res2$P, 
+              tl.col = "black",
+               sig.level = 1e-16, insig = "blank",
+              tl.srt = 45)
+
