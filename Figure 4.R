@@ -2,7 +2,7 @@
 # Please read the README file for the sample preparation of the analysis.
 
 setwd("~/Desktop/Link to BackUp_All/BALdata/BALdata/Part2/DataSheets")
-uniqCpGs <- read.table("cell-specific-CpGs_ourStudy.txt", sstringsAsFactors = F, header = T)
+
 uniqCpGs <- read.table("cell-specific-CpGs_ourStudy.txt", stringsAsFactors = F, header = T)
 head(uniqCpGs)
 BAL_HLADR <- read.table("myNorm_BAL_HLADR.txt", stringsAsFactors = F, header = T)
@@ -11,8 +11,7 @@ uniqCpGsHLADR <- uniqCpGs[1:594,]
 uniqCpGsCD3 <- uniqCpGs[595:2886,]
 
 library(EpiDISH)
-# data(centEpiFibIC.m)
-# data(DummyBeta.m)
+
 referenceData <- read.table("refDataB1_CD3_HLADR.txt", stringsAsFactors = F, header = T, row.names = 1)
 methData <- read.table("Stockholm_normalizedValue_GSE133062.txt", stringsAsFactors = F, header = T, row.names = 1)
 methData.m <- as.matrix(methData)
