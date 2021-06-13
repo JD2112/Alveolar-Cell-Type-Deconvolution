@@ -84,7 +84,7 @@ colnames(data1) <- gsub(x = colnames(data1), pattern = "B3_", replacement = "P3_
 colnames(data1) <- gsub(x = colnames(data1), pattern = "B4_", replacement = "P4_")
 colnames(data1) <- gsub(x = colnames(data1), pattern = "B5_", replacement = "P5_")
 
-data2  <- cor(data)
+data2  <- cor(data, method = "s)
 corrplot(data2, method = "number", order = "hclust", 
          tl.col = "black", tl.srt = 45)
 
