@@ -90,7 +90,7 @@ corrplot(data2, method = "number", order = "hclust",
 
 
 library("Hmisc")
-res2 <- rcorr(as.matrix(data1))
+res2 <- rcorr(as.matrix(data1), type = "spearman") # type = c("spearman", "pearson")
 res2
 
 flattenCorrMatrix <- function(cormat, pmat) {
