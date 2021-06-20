@@ -1,45 +1,74 @@
-hladrData <- read.table("myNorm_BAL_HLADR.txt", stringsAsFactors = F, header = T)
-head(hladrData)
-
-hladr_si <- hladrData[, c(1,2,4,6,8,10)]
-hladr_bal <- hladrData[, c(1,3,5,7,9,11)]
-
-# avarge si and bal data
-hladr_si$avg <- (hladr_si$B1_SPU_HLDADR+hladr_si$B2_SPU_HLDADR + hladr_si$B3_SPU_HLDADR + 
-                   hladr_si$B4_SPU_HLDADR + hladr_si$B5_SPU_HLDADR)/5
-head(hladr_si)
-hladr_bal$avg <- (hladr_bal$B1_LAV_HLDADR+hladr_bal$B2_LAV_HLDADR + hladr_bal$B3_LAV_HLDADR + 
-                    hladr_bal$B4_LAV_HLDADR + hladr_bal$B5_LAV_HLDADR)/5
-head(hladr_bal)
-
-# subgroup only cell specific CpGs
-cpgs <- read.table("cellSpecificCpGs.txt", stringsAsFactors = F, header = T)
-hladr_cpgs <- merge(cpgs, hladr_bal, by = "ProbeID")
-head(hladr_cpgs)
-hladrCpGs <- hladr_cpgs[,c(8,2)]
-head(hladrCpGs)
-colnames(hladrCpGs)[2] <- "type"
-# Create a second file for MWW test
-hladr_siAVG <- hladr_si[,c(1,7)]
-hladr_siAVG$type <- rep("SI")
-head(hladr_siAVG)
-hladr_balAVG <- hladr_bal[,c(1,7)]
-hladr_balAVG$type <- rep("orig")
+# Q-Q plot from HLA-DR unique CpGs Vs All
 head(hladr_balAVG)
-dim(hladr_balAVG)
-allHLADRbal <- hladr_balAVG[,c(2,3)]
-head(allHLADRbal)
-## Create data for qqplot
-qqhladr <- rbind(allHLADRbal, hladrCpGs)
-qqPlot(qqhladr$avg)
+head(uniqCpGsHLADR)
+head(hladr_siAVG)
+mySIhladr <- merge(uniq_HLADR_BAL, hladr_siAVG, by ="ProbeID")
 
-qqnorm(hladr_balAVG$avg, pch = 1, frame = FALSE)
-qqline(hladr_balAVG$avg, col = "steelblue", lwd = 2)
+stockholmData <- read.table("~/Documents/ML/BALvsIS/Part2- ValidationWithStockholmData/DataSheets/Stockholm_normalizedValue_GSE133062.txt", 
+                            stringsAsFactors = FALSE, header = TRUE)
+head(stockholmData)
+st.Data <- merge(uniq_HLADR_BAL, stockholmData, by = "ProbeID")
+colnames(st.Data)[3] <- "uniqHLADR"
+st.Data$stAVG <- rowMeans(st.Data[c(5:39)])
+
+myData.HLADR <- merge(st.Data, uniq_HLADR_BAL, by ="ProbeID")
+
+mySI.hladr.stData <- merge(mySIhladr, stockholmData, by = "ProbeID")
+colnames(mySI.hladr.stData)[5] <- "SIavg"
+mySI.hladr.stData$stAVG <- rowMeans(mySI.hladr.stData[c(7,41)])
+
+uniq_HLADR_BAL <- merge(uniqCpGsHLADR, hladr_balAVG, by ="ProbeID")
+head(uniq_HLADR_BAL)
 
 
-library("car")
-qqData <- hladr_cpgs[,c(2, 8)]
-qqPlot(qqData$avg)
+gg_qq <- function(x, distribution = "norm", ..., line.estimate = NULL, conf = 0.95,
+                  labels = names(x)){
+  q.function <- eval(parse(text = paste0("q", distribution)))
+  d.function <- eval(parse(text = paste0("d", distribution)))
+  x <- na.omit(x)
+  ord <- order(x)
+  n <- length(x)
+  P <- ppoints(length(x))
+  df <- data.frame(ord.x = x[ord], z = q.function(P, ...))
+  
+  if(is.null(line.estimate)){
+    Q.x <- quantile(df$ord.x, c(0.25, 0.75))
+    Q.z <- q.function(c(0.25, 0.75), ...)
+    b <- diff(Q.x)/diff(Q.z)
+    coef <- c(Q.x[1] - b * Q.z[1], b)
+  } else {
+    coef <- coef(line.estimate(ord.x ~ z))
+  }
+  
+  zz <- qnorm(1 - (1 - conf)/2)
+  SE <- (coef[2]/d.function(df$z)) * sqrt(P * (1 - P)/n)
+  fit.value <- coef[1] + coef[2] * df$z
+  df$upper <- fit.value + zz * SE
+  df$lower <- fit.value - zz * SE
+  
+  if(!is.null(labels)){ 
+    df$label <- ifelse(df$ord.x > df$upper | df$ord.x < df$lower, labels[ord],"")
+  }
+  
+  p <- ggplot(df, aes(x=z, y=ord.x)) +
+    geom_point() + 
+    geom_abline(intercept = coef[1], slope = coef[2]) +
+    geom_ribbon(aes(ymin = lower, ymax = upper), alpha=0.2) +
+    theme(text = element_text(family = "Times New Roman", face = "bold", size = 14), 
+          axis.title = element_text(size = 12),
+          axis.text = element_text(size = 12), axis.line = element_line(size = 1),
+          panel.grid.minor = element_blank(),
+    )
+  if(!is.null(labels)) p <- p + geom_text( aes(label = label))
+  print(p)
+  coef
+}
 
-qqPlot(hladr_cpgs$avg)
-qqPlot(hladr_siAVG$avg)
+
+mod.lm <- lm(log(st.Data$uniqHLADR) ~ log(st.Data$stAVG))
+x <- rstudent(mod.lm)
+gg_qq(x)
+
+mod.lm1 <- lm(log(mySI.hladr.stData$SIavg) ~ log(mySI.hladr.stData$stAVG))
+y <- rstudent(mod.lm1)
+gg_qq(y)
