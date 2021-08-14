@@ -1,4 +1,4 @@
-# SIvsBALanalysis
+# The R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and lymphocytes (CD3+) specific cell types from DNA methylation analysis.
 
 ## Related publication: (Accepted in Epigenetics, Taylor & Francis)
 *Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm, M.* (2021). **DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types.** bioRxiv.[https://doi.org/10.1101/2021.03.12.435086](https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1)
