@@ -3,7 +3,7 @@
 ## Related publication: (Accepted in Epigenetics, Taylor & Francis)
 *Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm, M.* (2021). **DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types.** bioRxiv.[https://doi.org/10.1101/2021.03.12.435086](https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1)
 
-Create package and R script files according to the analysis (or Result in the manuscript).
+## Create package and R script files according to the analysis (or Result in the manuscript).
 1. DNA methylome analysis - till the normalizaed beta value calculation.
 2. Normality calculation with Anderson's test (**Table 1**)
 3. Spearman's rank correaltion analysis - Figures, Table (**Figure 2 - a. HLA-DR, b. CD3**)
