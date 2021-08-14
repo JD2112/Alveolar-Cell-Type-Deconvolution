@@ -1,15 +1,33 @@
-# Reference free EWAS cell proportion analysis
+# SAME AS Figure 3.R - moved to junk codes
+# Author details
+## Script name: Figure 3.R
+## Purpose of the script: To visualize the Quantile-Quantile plot from the DNA methylation data mentioned in the Das et al (2021), Epigenetics
+## Author(s): Jyotirmoy Das, Ph.D.
+## Date Created: 2019-03-21
+## Date Last Modified: 2021-06-20
+## Copyright statement: MIT open license
+## Contact information: jyotirmoy.das@liu.se
+## Please cite: 
+## @article{das2021dna,
+##  title={DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types},
+##  author={Das, Jyotirmoy and Idh, Nina and Paues, Jacob and Sikkeland, Liv Ingunn Bjoner and Lerm, Maria},
+##  journal={bioRxiv},
+##  year={2021},
+##  publisher={Cold Spring Harbor Laboratory}}
+## Notes: The user needs to have the IDAT files which can be available upon request to the corresponding author.
+## Please read the README file for the sample preparation of the analysis.
+
+
+
 # Different Deconvolution method to identify CpGs from heterogeneous samples.
-# Rscript modified and re-written by Jyotirmoy Das.
+# Rscript modified and written by Jyotirmoy Das.
 # Please read the README file for the sample preparation of the analysis.
 
 data <- read.table("myNorm_BAL_HLADR.txt", stringsAsFactors=F, header=T)
 colnames(data) <- substr(colnames(data), start = 1, stop = 6)
 
 # RefFreeEWAS - Houseman et al, 2014
-### Houseman EA, Molitor J, Marsit CJ: Reference-free cell mixture adjustments in analysis 
-#of DNA methylation data. Bioinformatics (Oxford, England) 2014, 30(10):1431-1439.
-
+### Houseman EA, Molitor J, Marsit CJ: Reference-free cell mixture adjustments in analysis of DNA methylation data. Bioinformatics (Oxford, England) 2014, 30(10):1431-1439.
 install.packages("RefFreeEWAS")
 library("RefFreeEWAS")
 edata <- as.matrix(log2(data/(1-data)))
@@ -43,7 +61,6 @@ write.table(cpg_ewas1,file="cpg_RefFreeEWAS_HLA-DR",sep="\t", quote = F)
 
 ## SVA (Surrogate Variable Analysis) based on Singular Value Decomposition (SVD) of residuals
 ### Leek JT, Storey JD: Capturing heterogeneity in gene expression studies by surrogate variable analysis. PLoS genetics 2007, 3(9):e161.
-
 BiocManager::install(c("sva","MASS","limma"))
 
 library(MASS)
@@ -160,3 +177,28 @@ hm <- as.matrix(combine)
 
 colnames(hm) <- c("", "HLA-DR", "", "CD3")
 Heatmap(hm, column_title_gp = gpar(fontsize = 12, fontfamily = "Times New Roman"),column_names_rot = 0, row_title_gp = gpar(fontsize = 12, fontfamily = "Times New Roman"), heatmap_legend_param = list(title = "est", color_bar = "discrete"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
