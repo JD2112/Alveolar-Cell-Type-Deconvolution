@@ -27,7 +27,7 @@ sFigure1 <- function(sFigure1){
     suppressMessages(suppressWarnings(library(hrbrthemes)))
     suppressMessages(suppressWarnings(library(dplyr)))
     suppressMessages(suppressWarnings(library(tidyr)))
-    suppressMessages(suppressWarnings(library(viridis)))
+    
     data <- read.table("myNorm_BAL_CD3.txt", 
                 stringsAsFactors=F, 
                 header=T, 

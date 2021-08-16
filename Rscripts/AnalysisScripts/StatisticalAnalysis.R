@@ -182,9 +182,7 @@ StatiscalAnalysisCD3 <- function(StatiscalAnalysisCD3){
       geom_segment(aes(x= 1.2, y = 0.98, xend = 1.8, yend = 0.98))
   # Statistical calculation for adding the significance level
   mycom <- compare_means(avg ~ type,  data = cd3_si_bal)
-  #install.packages("ggpubr")
-  suppressMessages(suppressWarnings(library(ggpubr)))
-
+  
   # Violin plot with dots
   p <- ggplot(cd3_si_bal, aes(x=type, y=avg, fill = type)) + 
         geom_violin(trim=FALSE) + #fill=c("#614051", "2A52BE"))+
