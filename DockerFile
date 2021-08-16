@@ -1,0 +1,71 @@
+#./Dockerfile
+
+FROM rocker/rstudio
+FROM ubuntu:latest as builder
+LABEL   authors ="Jyotirmoy Das" \
+        description = "Docker image containing all requirement for the AlveolarCellTypeDeconvolution pipeline"
+
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+    libxml2-dev \
+    libcairo2-dev \
+    libsqlite3-dev \
+    libmariadbd-dev \
+    libpq-dev \
+    libssh2-1-dev \
+    unixodbc-dev \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    zlib1g-dev \
+    autoconf \
+    git \
+    wget 
+    
+
+
+## update system libraries
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean
+
+# Docker inheritance
+FROM bioconductor/bioconductor_docker:devel  
+
+    RUN R -e 'BiocManager::install(ask = F)' && R -e 'BiocManager::install(c("rtracklayer", \
+    "ChAMP", "ggplot2", "RColorBrewer", "Rsamtools", ask = F))'
+
+
+
+WORKDIR /tmp
+
+# install the package
+RUN git clone https://github.com/JD2112/AlveolarCellTypeDeconvolution.git && \
+    cd AlveolarCellTypeDeconvolution && \
+
+RUN ["install2.r" --error \
+    --deps TRUE \
+
+
+
+library(ChAMP)
+library(cluster)
+library(ape)
+library(ggplot2)
+library(RColorBrewer)
+library(ggpubr)
+library(EpiDISH)
+library(extrafont)
+library(Hmisc)
+library(tidyverse)
+library(caret)
+library(ggpointdensity)
+library(ggsubplot)
+library(RefFreeEWAS)
+library(MASS)
+library(limma)
+library(TOAST)
+library(corrplot)
+library(aplpack)
+library(viridis)
+library(hrbrthemes)
+library(dplyr)
+library(tidyr)
