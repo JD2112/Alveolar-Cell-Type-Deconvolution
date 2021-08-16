@@ -6,7 +6,7 @@
 ## Create package and R script files according to the analysis (or Result in the manuscript).
 1. DNA methylome analysis - till the normalizaed beta value calculation.
 2. Normality calculation with Anderson's test (**Table 1**)
-3. Spearman's rank correaltion analysis - Figures, Table (**Figure 2 - a. HLA-DR, b. CD3**)
+3. Pearson's rank correaltion analysis - Figures, Table (**Figure 2 - a. HLA-DR, b. CD3**)
 4. Beanplot from the beta values of the whole dataset to describe the beta distribution over all samples (**Figure S1a**)
 5. Mann-Whitney test for the hypothesis - Figures, Table (F**igure 3a - HLA-DR and 3b. CD3**)
 6. Validation of SI and BAL from Lung compartments (**Figure 4**)
