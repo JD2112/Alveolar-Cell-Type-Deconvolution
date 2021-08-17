@@ -16,6 +16,8 @@ pkgs_CRAN <- c(
     'hrbrthemes',
     'dplyr',
     'tidyr',
-)
+    'BiocManager',
+    'gplot2',
+    'ggpubr')
 
 install.packages(pkgs_CRAN)
