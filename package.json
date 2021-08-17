@@ -1,0 +1,14 @@
+"version": "1.0.0",
+  "name": "@JD2112/AlveolarCellTypeDeconvolution",
+  "description": "DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types.",
+  "author": {
+    "name": "Jyotirmoy Das",
+    "email": "jyotirmoy.das@liu.se",
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/JD2112/AlveolarCellTypeDeconvolution"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/JD2112"
+  },
