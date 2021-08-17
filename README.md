@@ -13,7 +13,11 @@
 7. Testing of 3 reference-free algorithms - algorithms testings, Venn Diagrams (**Figure 5a. HLA-DR and Figrue 5b. CD3**)
 8. Cell proportion analysis using the EpiDISH package (**Figure 6**)
 
-
+## Use of Docker image
+Dockerfile can be used for all R packages and repositories. The image file can be found here 
+```
+docker pull jd21/alv-decon:latest
+```
 ## Functions present in the package
 |Functions|R scripts| description|notes|
 |---|---|---|---|
