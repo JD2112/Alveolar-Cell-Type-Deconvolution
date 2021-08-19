@@ -1,8 +1,8 @@
 #./Dockerfile
 FROM rocker/rstudio
 
-LABEL   authors ="Jyotirmoy Das" \
-        description = "Docker image containing all requirement for the AlveolarCellTypeDeconvolution pipeline"
+LABEL   authors ="Jyotirmoy Das, Ph.D." \
+        description = "Docker image containing all requirement for the Alveolar Cell Type Deconvolution pipeline"
 
 # install the package
 RUN git clone https://github.com/JD2112/AlveolarCellTypeDeconvolution.git && \
