@@ -1,4 +1,4 @@
 .DS_Store
-.junk
+.junk/*
 Rscripts/.DS_Store
-.github/workflows
+.github/workflows/*
