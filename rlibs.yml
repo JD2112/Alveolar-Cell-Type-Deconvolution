@@ -1,0 +1,27 @@
+name: rlibs
+channels:
+    - conda-forge
+    - bioconda
+    - defaults
+dependencies:
+    - r-base=4.0.3
+    - r-tidyverse
+    - r:
+        - ape
+        - cluster
+        - RColorBrewer
+        - extrafont
+        - Hmisc
+        - caret
+        - ggpointdensity
+        - ggsubplot
+        - RefFreeEWAS
+        - aplpack
+        - MASS
+        - corrplot
+        - viridis
+        - hrbrthemes
+        - dplyr
+        - BiocManager
+        - ggplot2
+        - ggpubr
