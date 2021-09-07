@@ -2,3 +2,4 @@
 .junk/*
 Rscripts/.DS_Store
 .github/workflows/*
+.Data/
