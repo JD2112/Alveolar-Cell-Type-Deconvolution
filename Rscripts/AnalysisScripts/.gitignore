@@ -3,4 +3,4 @@
 Rscripts/.DS_Store
 .github/workflows/*
 .Data/
-.Rhistory
+.junk/.Rhistory
