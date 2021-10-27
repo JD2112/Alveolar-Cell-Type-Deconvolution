@@ -62,8 +62,8 @@ RUN install2.r -e \
 testthat
 
 ## Install remaining packages from source
-COPY ./required-CRANlibraries.R /assests/required-CRANlibraries.R
-COPY ./required-BIOClibraries.R /assests/required-BIOClibraries.R
+COPY ./Rscripts/required-CRANlibraries.R /assests/required-CRANlibraries.R
+COPY ./Rscripts/required-BIOClibraries.R /assests/required-BIOClibraries.R
 RUN Rscript required-CRANlibraries.R
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
