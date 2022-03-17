@@ -1,31 +1,23 @@
 Alveolar Cell Type Deconvolution
 ================================
 .. image:: https://readthedocs.org/projects/alveolarcelltypedeconvolution/badge/?version=latest
-:target: https://alveolarcelltypedeconvolution.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
+    :target: https://alveolarcelltypedeconvolution.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 **R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and
 lymphocytes (CD3+) specific cell types from DNA methylation analysis.**
-|alv-decon|
 
 Publication:
 ------------
-
-| **(Published in Epigenetics, 2021-08-11)**
 | *Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm, M.* (2021).
   **DNA methylome-based validation of induced sputum as an effective
   protocol to study lung immunity: construction of a classifier of
   pulmonary cell types.**
+`**Epigenetics link** <https://www.tandfonline.com/doi/full/10.1080/15592294.2021.1969499>`__
+**BioRxiv.** `https://doi.org/10.1101/2021.03.12.435086 <https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1>`__
 
-BioRxiv.
-`https://doi.org/10.1101/2021.03.12.435086 <https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1>`__
-
-`Epigenetics
-link <https://www.tandfonline.com/doi/full/10.1080/15592294.2021.1969499>`__
-
-Create package and R script files according to the analysis (or Result in the manuscript).
+Create package and R script files according to the analysis (or Result in the article).
 ------------------------------------------------------------------------------------------
-
 1. DNA methylome analysis - till the normalizaed beta value calculation.
 2. Normality calculation with Anderson’s test (**Table 1**)
 3. Pearson’s rank correaltion analysis - Figures, Table (**Figure 2 - a.
@@ -46,7 +38,6 @@ Dockerfile can be used for all R packages and repositories. The image
 file can be found here
 
 ::
-
    docker pull jd21/alv-decon:latest
 
 Functions present in the package
@@ -103,16 +94,14 @@ Functions present in the package
 | *ggplotRe   | **Figure4.R**    |                  |                  |
 | gression()* |                  |                  |                  |
 +-------------+------------------+------------------+------------------+
-| *           | **supplemen      |                  |                  |
-| sFigure1()* | taryFigureS1.R** |                  |                  |
+|             | **supplemen      |                  |                  |
+| sFigure1()  | taryFigureS1.R** |                  |                  |
 +-------------+------------------+------------------+------------------+
-| *           | **supplemen      |                  |                  |
-| sFigure2()* | taryFigureS2.R** |                  |                  |
+|             | **supplemen      |                  |                  |
+| sFigure2()  | taryFigureS2.R** |                  |                  |
 +-------------+------------------+------------------+------------------+
 | *qqPlot()*  | **supplemen      | Q-Q plot for     | a sub-function   |
 |             | taryFigureS3.R** | compare DNA      | can also be      |
 |             |                  | methylome data   | used; gg_qq()    |
 +-------------+------------------+------------------+------------------+
 
-.. |alv-decon| image:: vertopal_59badac142d146bc9f9aa3671769afd8/1e05eb9b4c6657b76094975ffabc13151cb55c80.svg
-   :target: https://github.com/JD2112/AlveolarCellTypeDeconvolution/actions/workflows/docker-image.yml
