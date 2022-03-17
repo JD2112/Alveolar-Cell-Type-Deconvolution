@@ -5,7 +5,7 @@ Alveolar Cell Type Deconvolution
     :alt: Documentation Status
 
 **R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and
-lymphocytes (CD3+) specific cell types from DNA methylation analysis.**
+lymphocytes (CD3+/CD3+) specific cell types from DNA methylation analysis.**
 
 Publication:
 ------------
@@ -84,4 +84,3 @@ Functions present in the package
 |                                                       |                                    | compare DNA      | can also be      |
 |                                                       |                                    | methylome data   | used; gg_qq()    |
 +=======================================================+====================================+==================+==================+
-
