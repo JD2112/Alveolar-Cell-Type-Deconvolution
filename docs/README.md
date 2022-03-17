@@ -1,7 +1,7 @@
 # The R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and lymphocytes (CD3+) specific cell types from DNA methylation analysis.
 [![alv-decon](https://github.com/JD2112/AlveolarCellTypeDeconvolution/actions/workflows/docker-image.yml/badge.svg?event=workflow_run)](https://github.com/JD2112/AlveolarCellTypeDeconvolution/actions/workflows/docker-image.yml)
 ## Related publication: 
-**(Published in Epigenetics, 2021-08-11)**
+**(Published in Epigenetics, 2021-08-11)** \
 *Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm, M.* (2021). **DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types. 
 
 ** bioRxiv. [https://doi.org/10.1101/2021.03.12.435086](https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1) 
@@ -24,6 +24,7 @@ Dockerfile can be used for all R packages and repositories. The image file can b
 docker pull jd21/alv-decon:latest
 ```
 ## Functions present in the package
+
 Functions|R scripts| description|notes
 ---|----|----|----
 *ChAMPanalysis450K()*|**ChAMPanalysis.R**|script for DNA methylation using ChAMP|
