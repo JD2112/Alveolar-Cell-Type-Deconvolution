@@ -1,14 +1,11 @@
 The R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and lymphocytes (CD3+) specific cell types from DNA methylation analysis.
 ==========================================================================================================================================
 
-|alv-decon| ## Related publication: (Published in Epigenetics,
-2021-08-11) *Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm,
-M.* (2021). **DNA methylome-based validation of induced sputum as an
-effective protocol to study lung immunity: construction of a classifier
-of pulmonary cell types.  **
-bioRxiv.\ `https://doi.org/10.1101/2021.03.12.435086 <https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1>`__
- `Epigenetics
-link <https://www.tandfonline.com/doi/full/10.1080/15592294.2021.1969499>`__
+|alv-decon| 
+## Related publication: (Published in Epigenetics, 2021-08-11) *Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm, M.* (2021). **DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types.  **
+bioRxiv.\ 
+`https://doi.org/10.1101/2021.03.12.435086 <https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1>` \
+`Epigenetics link <https://www.tandfonline.com/doi/full/10.1080/15592294.2021.1969499>`__
 
 Create package and R script files according to the analysis (or Result in the manuscript).
 ------------------------------------------------------------------------------------------
@@ -30,9 +27,7 @@ Use of Docker image
 -------------------
 
 Dockerfile can be used for all R packages and repositories. The image
-file can be found here
-
-::
+file can be found here::
 
    docker pull jd21/alv-decon:latest
 
