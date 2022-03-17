@@ -1,14 +1,15 @@
 Alveolar Cell Type Deconvolution
 ================================
+
+**R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and
+lymphocytes (CD3+) specific cell types from DNA methylation analysis.**
 .. image:: https://readthedocs.org/projects/alveolarcelltypedeconvolution/badge/?version=latest
     :target: https://alveolarcelltypedeconvolution.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
-**R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and
-lymphocytes (CD3+/CD3+) specific cell types from DNA methylation analysis.**
-
 Publication:
 ------------
+
 | *Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm, M.* (2021).
   **DNA methylome-based validation of induced sputum as an effective
   protocol to study lung immunity: construction of a classifier of
@@ -16,8 +17,9 @@ Publication:
 
 **BioRxiv.** `https://doi.org/10.1101/2021.03.12.435086 <https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1>`__
 
-Create package and R script files according to the analysis (or Result in the article).
+Create package and R script files according to the analysis (or Result in the manuscript).
 ------------------------------------------------------------------------------------------
+
 1. DNA methylome analysis - till the normalizaed beta value calculation.
 2. Normality calculation with Anderson’s test (**Table 1**)
 3. Pearson’s rank correaltion analysis - Figures, Table (**Figure 2 - a.
@@ -44,43 +46,65 @@ file can be found here
 Functions present in the package
 --------------------------------
 
-+=======================================================+====================================+==================+==================+
-| Functions                                             | R scripts                          | description      | notes            |
-+=======================================================+====================================+==================+==================+
-| *ChAMPanalysis450K()*                                 | **ChAMPanalysis.R**                | script for DNA   |                  |
-|                                                       |                                    | methylation      |                  |
-|                                                       |                                    | using ChAMP      |                  |
-+=======================================================+====================================+==================+==================+
-| *StatiscalAnalysisHLADR()*                            | **StatisticalAnalysis.R**          |                  |                  |
-+=======================================================+====================================+==================+==================+
-| *StatiscalAnalysisCD3()*                              | **StatisticalAnalysis.R**          |                  |                  |
-+=======================================================+====================================+==================+==================+
-| *ValidationWithCysticFibrosis()*                      | **ValidationWithCF.R**             |                  |                  |
-+=======================================================+====================================+==================+==================+
-| *CompareAnalysisRingh()*                              | **StatisticalAnalysis.R**          |                  |                  |
-+=======================================================+====================================+==================+==================+
-| *histogramPlot()*                                     | **Figure2c.R**                     | histogram        |                  |
-|                                                       |                                    | analysis for     |                  |
-|                                                       |                                    | beta values      |                  |
-+=======================================================+====================================+==================+==================+
-| *AlveolarCellTypeDeconvolutionRefFreeEWAS()*          | **Figure3.R**                      | Houseman         |                  |
-|                                                       |                                    | algorithm        |                  |
-|                                                       |                                    | reference free   |                  |
-|                                                       |                                    | analysis         |                  |
-+=======================================================+====================================+==================+==================+
-| *AlveolarCellTypeDeconvolutionSVA()*                  | **Figure3.R**                      | SVA analysis     |                  |
-+=======================================================+====================================+==================+==================+
-| *AlveolarCellTypeDeconvolutionRefFreeCellMix()*       | **Figure3.R**                      |                  |                  |
-+=======================================================+====================================+==================+==================+
-| *AlveolarCellTypeDeconvolutionTOAST()*                | **Figure3.R**                      |                  |                  |
-+=======================================================+====================================+==================+==================+
-| *ggplotRegression()*                                  | **Figure4.R**                      |                  |                  |
-+=======================================================+====================================+==================+==================+
-| *sFigure1()*                                          | **supplementaryFigureS1.R**        |                  |                  |
-+=======================================================+====================================+==================+==================+
-| *sFigure2()*                                          | **supplementaryFigureS2.R**        |                  |                  |
-+=======================================================+====================================+==================+==================+
-| *qqPlot()*                                            | **supplementaryFigureS3.R**        | Q-Q plot for     | a sub-function   |
-|                                                       |                                    | compare DNA      | can also be      |
-|                                                       |                                    | methylome data   | used; gg_qq()    |
-+=======================================================+====================================+==================+==================+
++-------------+------------------+------------------+------------------+
+| Functions   | R scripts        | description      | notes            |
++=============+==================+==================+==================+
+| *ChAMPanal  | **C              | script for DNA   |                  |
+| ysis450K()* | hAMPanalysis.R** | methylation      |                  |
+|             |                  | using ChAMP      |                  |
++-------------+------------------+------------------+------------------+
+| *Sta        | **Statist        |                  |                  |
+| tiscalAnaly | icalAnalysis.R** |                  |                  |
+| sisHLADR()* |                  |                  |                  |
++-------------+------------------+------------------+------------------+
+| *S          | **Statist        |                  |                  |
+| tatiscalAna | icalAnalysis.R** |                  |                  |
+| lysisCD3()* |                  |                  |                  |
++-------------+------------------+------------------+------------------+
+| *Validatio  | **Vali           |                  |                  |
+| nWithCystic | dationWithCF.R** |                  |                  |
+| Fibrosis()* |                  |                  |                  |
++-------------+------------------+------------------+------------------+
+| *C          | **Statist        |                  |                  |
+| ompareAnaly | icalAnalysis.R** |                  |                  |
+| sisRingh()* |                  |                  |                  |
++-------------+------------------+------------------+------------------+
+| *histo      | **Figure2c.R**   | histogram        |                  |
+| gramPlot()* |                  | analysis for     |                  |
+|             |                  | beta values      |                  |
++-------------+------------------+------------------+------------------+
+| *AlveolarCe | **Figure3.R**    | Houseman         |                  |
+| llTypeDecon |                  | algorithm        |                  |
+| volutionRef |                  | reference free   |                  |
+| FreeEWAS()* |                  | analysis         |                  |
++-------------+------------------+------------------+------------------+
+| *Al         | **Figure3.R**    | SVA analysis     |                  |
+| veolarCellT |                  |                  |                  |
+| ypeDeconvol |                  |                  |                  |
+| utionSVA()* |                  |                  |                  |
++-------------+------------------+------------------+------------------+
+| *Al         | **Figure3.R**    |                  |                  |
+| veolarCellT |                  |                  |                  |
+| ypeDeconvol |                  |                  |                  |
+| utionRefFre |                  |                  |                  |
+| eCellMix()* |                  |                  |                  |
++-------------+------------------+------------------+------------------+
+| *Alve       | **Figure3.R**    |                  |                  |
+| olarCellTyp |                  |                  |                  |
+| eDeconvolut |                  |                  |                  |
+| ionTOAST()* |                  |                  |                  |
++-------------+------------------+------------------+------------------+
+| *ggplotRe   | **Figure4.R**    |                  |                  |
+| gression()* |                  |                  |                  |
++-------------+------------------+------------------+------------------+
+| *           | **supplemen      |                  |                  |
+| sFigure1()* | taryFigureS1.R** |                  |                  |
++-------------+------------------+------------------+------------------+
+| *           | **supplemen      |                  |                  |
+| sFigure2()* | taryFigureS2.R** |                  |                  |
++-------------+------------------+------------------+------------------+
+| *qqPlot()*  | **supplemen      | Q-Q plot for     | a sub-function   |
+|             | taryFigureS3.R** | compare DNA      | can also be      |
+|             |                  | methylome data   | used; gg_qq()    |
++-------------+------------------+------------------+------------------+
+
