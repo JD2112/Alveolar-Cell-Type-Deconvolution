@@ -1,5 +1,8 @@
-# The R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and lymphocytes (CD3+) specific cell types from DNA methylation analysis.
+# Alveolar Cell Type Deconvolution
+
+**The R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and lymphocytes (CD3+) specific cell types from DNA methylation analysis.**
 [![alv-decon](https://github.com/JD2112/AlveolarCellTypeDeconvolution/actions/workflows/docker-image.yml/badge.svg?event=workflow_run)](https://github.com/JD2112/AlveolarCellTypeDeconvolution/actions/workflows/docker-image.yml)
+
 ## Related publication: 
 **(Published in Epigenetics, 2021-08-11)** \
 *Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm, M.* (2021). **DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types.**
