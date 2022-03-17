@@ -3,6 +3,8 @@ Alveolar Cell Type Deconvolution
 
 **R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and
 lymphocytes (CD3+) specific cell types from DNA methylation analysis.**
+
+
 .. image:: https://readthedocs.org/projects/alveolarcelltypedeconvolution/badge/?version=latest
     :target: https://alveolarcelltypedeconvolution.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
@@ -97,11 +99,11 @@ Functions present in the package
 | *ggplotRe   | **Figure4.R**    |                  |                  |
 | gression()* |                  |                  |                  |
 +-------------+------------------+------------------+------------------+
-| *           | **supplemen      |                  |                  |
-| sFigure1()* | taryFigureS1.R** |                  |                  |
+|             | **supplemen      |                  |                  |
+| sFigure1()  | taryFigureS1.R** |                  |                  |
 +-------------+------------------+------------------+------------------+
-| *           | **supplemen      |                  |                  |
-| sFigure2()* | taryFigureS2.R** |                  |                  |
+|             | **supplemen      |                  |                  |
+| sFigure2()  | taryFigureS2.R** |                  |                  |
 +-------------+------------------+------------------+------------------+
 | *qqPlot()*  | **supplemen      | Q-Q plot for     | a sub-function   |
 |             | taryFigureS3.R** | compare DNA      | can also be      |
