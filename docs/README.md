@@ -2,6 +2,8 @@
 
 **R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and lymphocytes (CD3+) specific cell types from DNA methylation analysis.**
 [![alv-decon](https://github.com/JD2112/AlveolarCellTypeDeconvolution/actions/workflows/docker-image.yml/badge.svg?event=workflow_run)](https://github.com/JD2112/AlveolarCellTypeDeconvolution/actions/workflows/docker-image.yml)
+[![Documentation Status](https://readthedocs.org/projects/alveolarcelltypedeconvolution/badge/?version=latest)](https://alveolarcelltypedeconvolution.readthedocs.io/en/latest/?badge=latest)
+      
 
 ## Publication: 
 **(Published in Epigenetics, 2021-08-11)** \

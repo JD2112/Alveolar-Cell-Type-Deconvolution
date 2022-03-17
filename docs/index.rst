@@ -1,5 +1,8 @@
 Alveolar Cell Type Deconvolution
 ================================
+.. image:: https://readthedocs.org/projects/alveolarcelltypedeconvolution/badge/?version=latest
+:target: https://alveolarcelltypedeconvolution.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
 
 **R scripts to analyze the Alveolar macrophages (HLA-DR+/CD3-) and
 lymphocytes (CD3+) specific cell types from DNA methylation analysis.**
