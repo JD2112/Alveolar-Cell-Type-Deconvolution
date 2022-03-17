@@ -25,6 +25,7 @@ docker pull jd21/alv-decon:latest
 ```
 ## Functions present in the package
 |Functions|R scripts| description|notes|
+|---|----|----|----|
 |*ChAMPanalysis450K()*|**ChAMPanalysis.R**|script for DNA methylation using ChAMP||
 |*StatiscalAnalysisHLADR()*|**StatisticalAnalysis.R**|||
 |*StatiscalAnalysisCD3()*|**StatisticalAnalysis.R**|||
