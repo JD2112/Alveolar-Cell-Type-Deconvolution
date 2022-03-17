@@ -24,19 +24,19 @@ Dockerfile can be used for all R packages and repositories. The image file can b
 docker pull jd21/alv-decon:latest
 ```
 ## Functions present in the package
-|Functions|R scripts| description|notes|
-|---|----|----|----|
-|*ChAMPanalysis450K()*|**ChAMPanalysis.R**|script for DNA methylation using ChAMP||
-|*StatiscalAnalysisHLADR()*|**StatisticalAnalysis.R**|||
-|*StatiscalAnalysisCD3()*|**StatisticalAnalysis.R**|||
-|*ValidationWithCysticFibrosis()*|**ValidationWithCF.R**|||
-|*CompareAnalysisRingh()*|**StatisticalAnalysis.R**|||
-|*histogramPlot()*|**Figure2c.R**|histogram analysis for beta values||
-|*AlveolarCellTypeDeconvolutionRefFreeEWAS()*|**Figure3.R**|Houseman algorithm reference free analysis||
-|*AlveolarCellTypeDeconvolutionSVA()*|**Figure3.R**|SVA analysis||
-|*AlveolarCellTypeDeconvolutionRefFreeCellMix()*|**Figure3.R**|||
-|*AlveolarCellTypeDeconvolutionTOAST()*|**Figure3.R**|||
-|*ggplotRegression()*|**Figure4.R**|||
-|*sFigure1()*|**supplementaryFigureS1.R**|||
-|*sFigure2()*|**supplementaryFigureS2.R**|||
-|*qqPlot()*|**supplementaryFigureS3.R**|Q-Q plot for compare DNA methylome data|a sub-function can also be used; gg_qq()|
+Functions|R scripts| description|notes
+---|----|----|----
+*ChAMPanalysis450K()*|**ChAMPanalysis.R**|script for DNA methylation using ChAMP|
+*StatiscalAnalysisHLADR()*|**StatisticalAnalysis.R**||
+*StatiscalAnalysisCD3()*|**StatisticalAnalysis.R**||
+*ValidationWithCysticFibrosis()*|**ValidationWithCF.R**||
+*CompareAnalysisRingh()*|**StatisticalAnalysis.R**||
+*histogramPlot()*|**Figure2c.R**|histogram analysis for beta values|
+*AlveolarCellTypeDeconvolutionRefFreeEWAS()*|**Figure3.R**|Houseman algorithm reference free analysis|
+*AlveolarCellTypeDeconvolutionSVA()*|**Figure3.R**|SVA analysis|
+*AlveolarCellTypeDeconvolutionRefFreeCellMix()*|**Figure3.R**||
+*AlveolarCellTypeDeconvolutionTOAST()*|**Figure3.R**||
+*ggplotRegression()*|**Figure4.R**||
+*sFigure1()*|**supplementaryFigureS1.R**||
+*sFigure2()*|**supplementaryFigureS2.R**||
+*qqPlot()*|**supplementaryFigureS3.R**|Q-Q plot for compare DNA methylome data|a sub-function can also be used; gg_qq()
