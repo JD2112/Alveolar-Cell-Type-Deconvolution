@@ -1,3 +1,0 @@
-```rest
-.. mdinclude:: README.md
-
