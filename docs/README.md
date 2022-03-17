@@ -2,9 +2,9 @@
 [![alv-decon](https://github.com/JD2112/AlveolarCellTypeDeconvolution/actions/workflows/docker-image.yml/badge.svg?event=workflow_run)](https://github.com/JD2112/AlveolarCellTypeDeconvolution/actions/workflows/docker-image.yml)
 ## Related publication: 
 **(Published in Epigenetics, 2021-08-11)** \
-*Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm, M.* (2021). **DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types. 
+*Das, J., Idh, N., Paues, J., Sikkeland, L. I. B., & Lerm, M.* (2021). **DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types.**
 
-** bioRxiv. [https://doi.org/10.1101/2021.03.12.435086](https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1) 
+BioRxiv. [https://doi.org/10.1101/2021.03.12.435086](https://www.biorxiv.org/content/10.1101/2021.03.12.435086v1) 
 
 [Epigenetics link](https://www.tandfonline.com/doi/full/10.1080/15592294.2021.1969499)
 
