@@ -2,7 +2,7 @@ Package: AlveolarCellTypeDeconvolution
 Type: Package
 Title: DNA methylome-based validation of induced sputum as an effective protocol to study lung immunity: construction of a classifier of pulmonary cell types
 Version: 0.1.0
-Authors@R: person("Jyotirmoy", "Das", email = "jd2112@example.com", role = c("aut", "cre"))
+Authors@R: person("Jyotirmoy", "Das", email = "jyotirmoy21@gmail.com", role = c("aut", "cre"))
 Description: Scripts and analyses for alveolar cell type deconvolution.
 License: MIT + file LICENSE
 Encoding: UTF-8
