@@ -1,8 +1,6 @@
 name: alv-decon
 
 on:
-  schedule:
-    - cron: '19 23 * * *'
   push:
     branches: [ master ]
     # Publish semver tags as releases.
